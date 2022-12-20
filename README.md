@@ -73,3 +73,29 @@ For example, "101 000 010 000" will only display the data stored at R[2]
 ```
 
 ## User interface
+* Left pushbutton will be used to execute the next instruction in the instruction memory.
+Toavoid pressing multiple times a debouncer has been implemented.
+* Right pushbutton will be used to execute the instruction defined by switches. It is the signal
+isexternal. Here also, a debouncer is implemented.
+* Middle pushbutton will be used to load the instruction that is specified by the user to the
+back of the queue in the instruction memory. Here also, a debouncer is implemented.
+* Upper pushbutton will be used to load the data value that is specified by the user to the
+register-file address that is also specified by the user. Here also, a debouncer is implemented.
+* Lower pushbutton will be used to clear everything existed in the processor and reset the
+controller. Here also, a debouncer is implemented.
+* 12 rightmost switches on Basys3 will be used to provide user-defined instruction.
+* 7 leftmost switches on Basys3 will be used to provide user-defined data value along with the
+register-file address where the 4 leftmost switches correspond to the data value and the
+remaining ones correspond to the register-file address. For instance, if the user inputs
+0010110, RF[6] should get the decimal value 2.
+* SevenSegment Display will be used for Sub, Add, Asc, Des, and Disp instructions.
+  * For Sub and Add instructions, the inputs A, B should be displayed in the leftmost
+2 digits and the result should be displayed on the rightmost digit. The remaining
+digit should be turned off.
+  * For Asc and Des instructions, the resulting sorted values should be displayed in
+order with 1 second time periods in the rightmost digit. The constant value
+should be displayed in the leftmost digit at each period. The remaining digits
+should be turned off.
+  * For Disp instruction, the data values should be displayed with 1 second time
+periods in the rightmost digit. The constant value should be displayed in the
+leftmost digit at each period. The remaining digits should be turned off.
